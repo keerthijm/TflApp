@@ -1,5 +1,8 @@
 ﻿namespace TflApp
 {
+    /// <summary>
+    /// Common string varibales used across the project
+    /// </summary>
     public static class CommonConstants
     {
         public const string APPID = "app_id";

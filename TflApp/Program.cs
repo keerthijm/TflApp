@@ -59,6 +59,13 @@ namespace TflApp
             }
 
         }
+
+        /// <summary>
+        /// Create URL by combining App_id, App_Key and URL - reading for AppSettings File
+        /// </summary>
+        /// <param name="args">Input Arguments</param>
+        /// <param name="host">Service Builder</param>
+        /// <returns>url required to process the request</returns>
         private static string GetUrl(string[] args, IHost host)
         {
             var config = host.Services.GetRequiredService<IConfiguration>();

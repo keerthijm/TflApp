@@ -14,9 +14,7 @@ o	Changing App ID and API key
 
 
 
-
-![image](https://user-images.githubusercontent.com/107592/129280630-38f5d582-8518-4334-9707-ca7dd3707cc5.png)
-
+![image](https://user-images.githubusercontent.com/107592/129281295-110103b2-aef7-4649-99fd-ea57e33f5fbc.png)
 
 
 

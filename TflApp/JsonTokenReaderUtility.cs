@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace TflApp
 {
+    /// <summary>
+    /// Utility Class has method to convert json to road object
+    /// </summary>
     public static class JsonTokenReaderUtility
     {
         public static Road ConvertToObject(JToken token)

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace TflApp
 {
+    /// <summary>
+    /// ApiService class to include methods which can coommunitcate to API's, like GET, POST
+    /// </summary>
     public class ApiService
     {
         private readonly ILogger _logger;
@@ -15,6 +18,11 @@ namespace TflApp
             _logger = logger;
             _httpFactory = httpFactory;
         }
+        /// <summary>
+        /// Get data from api
+        /// </summary>
+        /// <param name="url">url as string - path for accessing get</param>
+        /// <returns></returns>
         public async Task<string> GetAsync(string url)
         {
             _logger.LogInformation("Application {applicationEvent} at {dateTime}", "Started", DateTime.UtcNow);

@@ -3,24 +3,26 @@ using System.Text.Json.Serialization;
 
 namespace TflApp
 {
+    /// <summary>
+    /// Road as Base Class and Valid and Invalid Road as Derived Class
+    /// </summary>
     public abstract class Road
     {
         [JsonPropertyName("type")]
-        public string type { get; set; }
-
-        [JsonPropertyName("displayName")]
-        public string displayName { get; set; }
-
+        public string type { get; set; }       
         public abstract void WriteLine();
 
     }
-
+    /// <summary>
+    /// Valid Road has information on road id, display name, status information, Derived from Road base class
+    /// </summary>
     public class ValidRoad : Road
     {
-
         [JsonPropertyName("id")]
         public string id { get; set; }
 
+        [JsonPropertyName("displayName")]
+        public string displayName { get; set; }
 
         [JsonPropertyName("statusSeverity")]
         public string statusSeverity { get; set; }
@@ -37,6 +39,10 @@ namespace TflApp
             Console.ReadKey();
         }
     }
+
+    /// <summary>
+    /// Invalid road has httpStatus and httpStatusCode inforamtion and Derived from Road base class 
+    /// </summary>
     public class InvalidRoad : Road
     {
         [JsonPropertyName("timestampUtc")]
@@ -52,11 +58,11 @@ namespace TflApp
         public string httpStatus { get; set; }
 
         [JsonPropertyName("relativeUri")]
-        public Uri relativeUri { get; set; }
-
+        public string relativeUri { get; set; }
         public override void WriteLine()
         {
-            Console.WriteLine($"{displayName} is not a valid road");
+            var roadname = relativeUri.Split("/")[2];
+            Console.WriteLine($"{roadname} is not a valid road");
             Console.ReadKey();
         }
     }

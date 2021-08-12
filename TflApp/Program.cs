@@ -11,6 +11,7 @@ namespace TflApp
     {
         private static async Task Main(string[] args)
         {
+            // Using AppSettings for URL, app_id and app_key
             IHostBuilder builder = new HostBuilder()
                  .ConfigureAppConfiguration((hostContext, builder) =>
                  {
@@ -29,6 +30,7 @@ namespace TflApp
 
             IHost host = builder.Build();
 
+            // Create URL based on command line arguments and reading from appsettings file
             string path = GetUrl(args, host);
 
             using (IServiceScope serviceScope = host.Services.CreateScope())
@@ -37,10 +39,17 @@ namespace TflApp
 
                 try
                 {
+                    // ApiService object to access get method
                     ApiService myService = services.GetRequiredService<ApiService>();
                     string result = await myService.GetAsync(path);
+
+                    // Parse result as token, so we can check if it is array or a sinlge object
                     JToken token = JToken.Parse(result);
-                    Road road = JsonTokenReaderUtility.ConvertToObject(token);
+
+                    // Pass json token to conver to Valid or Invalid Road object
+                    var road = JsonTokenReaderUtility.ConvertToObject(token);
+
+                    // Print the output
                     road.WriteLine();
                 }
                 catch (Exception exception)
@@ -52,11 +61,11 @@ namespace TflApp
         }
         private static string GetUrl(string[] args, IHost host)
         {
-            IConfiguration config = host.Services.GetRequiredService<IConfiguration>();
-            IConfigurationSection app_id = config.GetSection(CommonConstants.APPID);
-            IConfigurationSection app_key = config.GetSection(CommonConstants.APPKey);
-            IConfigurationSection url = config.GetSection(CommonConstants.URL);
-            string path = url.Value.Replace(CommonConstants.ARG1, args[0]).Replace(CommonConstants.ARG2, app_id.Value).Replace(CommonConstants.ARG3, app_key.Value);
+            var config = host.Services.GetRequiredService<IConfiguration>();
+            var app_id = config.GetSection(CommonConstants.APPID);
+            var app_key = config.GetSection(CommonConstants.APPKey);
+            var url = config.GetSection(CommonConstants.URL);
+            var path = url.Value.Replace(CommonConstants.ARG1, args[0]).Replace(CommonConstants.ARG2, app_id.Value).Replace(CommonConstants.ARG3, app_key.Value);
             return path;
         }
 

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TflApp", "TflApp\TflApp.csproj", "{59545D0E-FA10-4312-BCCD-1A7CE908A003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTflApp", "TestTflApp\TestTflApp.csproj", "{C4E38DC1-00AA-4990-8DF4-613E435E5B09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59545D0E-FA10-4312-BCCD-1A7CE908A003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59545D0E-FA10-4312-BCCD-1A7CE908A003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59545D0E-FA10-4312-BCCD-1A7CE908A003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59545D0E-FA10-4312-BCCD-1A7CE908A003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E38DC1-00AA-4990-8DF4-613E435E5B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E38DC1-00AA-4990-8DF4-613E435E5B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E38DC1-00AA-4990-8DF4-613E435E5B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E38DC1-00AA-4990-8DF4-613E435E5B09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F083DBC-C28A-460A-96B4-8C64735750FF}
+	EndGlobalSection
+EndGlobal
